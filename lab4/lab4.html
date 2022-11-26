@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Таблица товаров</title>
+  <link href="http://e-learning.bmstu.ru/iu6/pluginfile.php/7546/mod_folder/content/0/bootstrap.min.css"
+  rel="stylesheet">
+  <style>
+    .container {
+      padding: 30px 6px 0 0;
+
+    }
+  </style>
+</head>
+<body class="container">
+  <form action="javascript:void(0);" name="itemAdding" >
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Название товара: </th>
+        </tr>
+      </thead>
+    </table> 
+    <p><input type="text" id="itemName" class="form-control" placeholder="name" required></p>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Стоимость товара: </th>
+        </tr>
+      </thead>
+    </table> 
+    <p><input type="text" id="price" class="form-control" placeholder="price" required></p>
+    <p><input type="submit" id="submit" value="Добавить" onClick="addGoods()" class="btn btn-primary" ></p>
+  </form>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Таблица товаров </th>
+      </tr>
+    </thead>
+  </table> 
+
+  <table id="itemTable" class="table">
+    <thead class="thead-light">
+      <tr >
+        <th >Наименование</th>
+        <th >Цена</th>
+        <th ></th>
+      </tr>
+    </thead>
+  </table>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Корзина </th>
+      </tr>
+    </thead>
+  </table> 
+
+
+  <table id="basket" class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>Наименование</th>
+        <th>Цена</th>
+        <th>Количество</th>
+      </tr>
+    </thead>
+  </table>
+
+  <table id="sumTable" class="table">
+    <tr>
+      <td>Сумма заказа:</td>
+      <td>0</td>
+      <td>
+        <input type="submit" value="Рассчитать" onClick="renewSum()" class="btn btn-primary">
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    function mouseOver(el){
+      el.style.backgroundColor = "yellow";
+    }
+    function mouseOut(el){
+      el.style.backgroundColor = " white";
+    }
+    function addGoods() { 
+      let table_basket = document.getElementById('basket')
+      let item_name = document.getElementById('itemName').value 
+      let price = document.getElementById('price').value
+      let flag = true
+
+      table_1 = document.getElementById('itemTable')
+      row = table_1.insertRow(1)
+      if(item_name != '' && price > 0){
+        cell_1 = row.insertCell(0)
+        cell_1.innerHTML = item_name
+
+        cell_2 = row.insertCell(1)
+        cell_2.innerHTML = price
+      }
+      cell_2.setAttribute("onmouseover","mouseOver(this)");
+      cell_2.setAttribute("onmouseout","mouseOut(this)");
+
+      let length = table_basket.rows.length 
+
+      if (length > 1) {
+        for (let i = 1; i < length; i++) {
+          let t_name = table_basket.rows[i].cells[0].innerHTML
+          let t_price = table_basket.rows[i].cells[1].innerHTML
+          let t_count = parseInt(table_basket.rows[i].cells[2].innerHTML)
+          if (item_name == t_name && price == t_price) {
+            t_count += 1
+            table_basket.rows[i].cells[2].innerHTML = t_count
+            flag = false
+          }
+        }
+      } 
+
+      if (flag) {
+        if(item_name != '' && price > 0){
+          row_basket = table_basket.insertRow(length)
+          cell_basket_1 = row_basket.insertCell(0)
+          cell_basket_1.innerHTML = item_name
+          
+          cell_basket_2 = row_basket.insertCell(1)
+          cell_basket_2.innerHTML = price
+          cell_basket_2.setAttribute("onmouseover","mouseOver(this)");
+          cell_basket_2.setAttribute("onmouseout","mouseOut(this)");
+
+          cell_basket_3 = row_basket.insertCell(2)
+          cell_basket_3.innerHTML = 1
+
+          flag = true 
+        }
+      }
+    }
+
+    function renewSum() {
+      let table_basket = document.getElementById('basket')
+      let length = table_basket.rows.length
+      let summ = 0
+
+      for(let i = 1; i < length; i++) {
+        let t_price = parseFloat(table_basket.rows[i].cells[1].innerHTML)
+        let t_count = parseInt(table_basket.rows[i].cells[2].innerHTML)
+        let mul = t_price * t_count
+        summ = summ + mul
+      }
+      
+      let table_sum = document.getElementById('sumTable')
+      //table_sum.setAttribute("onmouseover","mouseOver(this)");
+      //table_sum.setAttribute("onmouseout","mouseOut(this)");
+      table_sum.rows[0].cells[1].innerHTML = summ          
+    }
+  </script>
+</body>
+</html>
