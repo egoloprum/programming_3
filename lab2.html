@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICS6 Bootstrap</title>
+    <link href="http://e-learning.bmstu.ru/iu6/pluginfile.php/7546/mod_folder/content/0/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 40px;
+        }
+
+        main {
+            margin-top: 15px;
+        }
+
+        footer {
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .my-primary {
+            background-color: #72c5a8;
+            color: white;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        main > div {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        span.s1 {
+                color: cyan;
+        }
+        span.s2 {
+            color: red;
+        }
+        span.s3 {
+            color: green;
+        }
+        span.s4 {
+            color:aquamarine;
+        }
+        span.s5 {
+            color:brown;
+        }
+        span.s6 {
+            color:blueviolet;
+        }
+        span.s7 {
+            color: yellow;
+        }
+        span.s8 {
+            color: yellowgreen;
+        }
+        span.s9 {
+            color:plum;
+        }
+        span.s10 {
+            color: pink;
+        }
+        b.b1 {
+            font-style: oblique;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+        var.v1 {
+            font-style: normal;
+            font-family: serif;
+            color: black;
+            font-weight: bold;
+        } 
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark my-primary">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-4">
+                <img src=" http://e-learning.bmstu.ru/iu6/pluginfile.php/7546/mod_folder/content/0/avatar.jpg" alt="avatar" width="150" height="150">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <form>
+                    <div class="form-group row">
+                        <label for="fname" class="col-sm-3 col-form-label">Имя</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="fname" id="fname">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="sname" class="col-sm-3 col-form-label">Фамилия</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="sname" id="sname">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <p class="col-form-label col-sm-3">Пол</p>
+                        <div class="col-sm-9">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="mgender" value="м">
+                                <label class="form-check-label" for="mgender">
+                                    М
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="fgender" value="ж">
+                                <label class="form-check-label" for="fgender">
+                                    Ж
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="birthday" class="col-sm-5 col-form-label">Дата рождения</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" name="birthday" id="birthday">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fpassword" class="col-sm-3 col-form-label">Пароль</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="fpassword" id="fpassword">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="spassword" class="col-sm-3 col-form-label">Повторите пароль</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="spassword" id="spassword">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-8">
+                <table class="table table-bordered">
+                    <tr>
+                        <th rowspan="8">СР</th>
+                        <th>Время</th>
+                        <th>ЧС</th>
+                        <th>ЗН</th>
+                    </tr>
+                    <tr>
+                        <td>08.30-10.05</td>
+                        <td colspan="2">Электротехника</td>
+                    </tr>
+                    <tr>
+                        <td>10.15-11.50</td>
+                        <td colspan="2">Физико-химические основы электронных средств</td>
+                    </tr>
+                    <tr>
+                        <td>12.00-13.35</td>
+                        <td>Материаловедение и материалы электронных средств</td>
+                        <td>Метрология и технические измерения в производстве электронных средств</td>
+                    </tr>
+                    <tr>
+                        <td>13.50-15.25</td>
+                        <td>Материаловедение и материалы электронных средств</td>
+                        <td>Метрология и технические измерения в производстве электронных средств</td>
+                    </tr>
+                    <tr>
+                        <td>15.40-17.15</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>17.25-19.00</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>19.10-20.45</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="sheet-container">
+                    <pre>
+                        <b class="b1">1) Average Speed Formula:</b> 
+                        The <span class="s1">average speed</span><sup> is the average of speed of a moving body for the overall distance that it has covered.</sup> <var class="v1">S = d/t </var>  
+                        <b class="b1">2) Acceleration Formula:</b>
+                        <span class="s2">Acceleration</span><sub> is defined as the rate of change in velocity to the change in time.</sub><u> It is denoted by symbol a.</u> <var class="v1">a = (v−u)/t</var>
+                        <b class="b1">3) Density Formula:</b>
+                        The <span class="s3">density</span><strong> of material shows the denseness of it in a specific given area.</strong><var  class="v1">ρ = m/V</var>
+                        <b class="b1">4) Newton’s Second Law:</b>
+                        According to <span class="s4">Newton’s second law</span> of motion, the force can be expressed by the product of mass and acceleration of the body.<var  class="v1">F = m × a</var>
+                        <b class="b1">5) Power Formula:</b>
+                        The capacity to do some work is termed as Energy. The Energy spent to do work in a unit amount of time is termed as <span class="s5">Power</span>.<var class="v1">P = W/t</var>
+                        <b class="b1">6) Weight Formula:</b>
+                        <span class="s6">Weight</span> is not anything but the force which an object experiences due to gravity.<var class="v1">W = mg</var>
+                        <b class="b1">7) Pressure Formula:</b>
+                        The <span class="s7">pressure</span> is defined as the amount of force applied per unit area of the object.<var class="v1">P = F/A</var>
+                        <b class="b1">8) Kinetic Energy formula:</b>
+                        <span class="s8">Kinetic energy</span> is the energy that is possessed by a body due to its state of motion.<var class="v1">E = 12mv^2</var> 
+                        <b class="b1">9) Ohms Law Formula:</b>
+                        <span class="s9">Ohms law</span> says that the current running through some conductor material is directly proportional to the potential difference between two endpoints of the conductor.<var class="v1">V = I × R</var>
+                        <b class="b1">10) Frequency Formula:</b>
+                        <span class="s10">Frequency</span> is the revolutions completed per second or as the number of wave cycles.<var class="v1">f = Vλ </var>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="my-primary">
+        <div class="container">
+            <p class="footer-text">Footer</p>
+        </div>
+    </footer>
+</body>
+
+</html>
