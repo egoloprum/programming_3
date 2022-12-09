@@ -1,0 +1,14 @@
+<h1>Example#input</h1>
+<%= form_with url: "/home/page", method: :get do |form| %>
+<%= form.label :num1, "Input first number:" %>
+<%= form.number_field :num1, value: 1, min: 0 %>
+<br/>
+<%= form.label :num2, "Input second number:" %>
+<%= form.number_field :num2, value: 1, min: 1 %>
+<br/>
+<%= form.submit "Calculate" %>
+<% end %>
+<% unless flash[:error].nil?%>
+<div class="error-text center"> <%= flash[:error] %> </div>
+<% end %>
+

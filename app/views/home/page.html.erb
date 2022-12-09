@@ -1,0 +1,30 @@
+<h1>Answer</h1>
+<h3> You entered <%= params[:num1].to_i %> и <%= params[:num2].to_i %></h3>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<div>
+<table>
+<tr><th>Index</th><th>Answer</th></tr>
+<% @fun.each_with_index do |each, index| %>
+    <tr>
+    <td><%= index + 1 %></td>
+    <td><%= each %></td>
+    <% end %>
+    </tr>
+</table>
+</div>
+
+<p><h3><%= "Greatest Common Divisor: #{@res}\n" %></h3></p>
+
+<p><h3><%= "Greatest Common Divisor: #{@summ}\n" %></h3></p>
+
+
+
+<%= form_with url: "/", method: :get do |form| %>
+<%= form.submit 'back to main page' %>
+<% end %>
