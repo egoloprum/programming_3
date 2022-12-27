@@ -1,0 +1,12 @@
+<h2>РК-2 Мэндбаяр Ганбаяр ИУ6И-31Б</h2>
+<h2>Билет №6</h2>
+<h3>Дана строка, состоящая из слов, разделенных одним пробелом. Определить n ое слово.</h3>
+<h4>INPUT INFO</h4>
+<%= form_tag("/home/view", :method => "get") do %>
+  <%= label_tag("ENTER NUMBERS WITH SPACES:" )%>
+  <%= text_field_tag(:arr_a) %> <br/>
+  <%= label_tag("ENTER N NUMBER:" )%>
+  <%= number_field_tag(:num, min: 0) %> <br/>
+  <br/>
+  <%= submit_tag("ANSWER") %>
+<% end %>
