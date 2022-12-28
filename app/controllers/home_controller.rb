@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   def input; end
 
   def view
-    @arr = params[:arr_a].split(' ').map(&:to_i)
+    @arr = params[:arr_a].split(' ').map(&:to_s)
     @n_num = params[:num].to_i
 
     @arr.each_with_index do |element, index|
